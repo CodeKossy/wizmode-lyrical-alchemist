@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WizMode – Lyrical Alchemist</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ffe1;
+      font-family: 'Arial', sans-serif;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+    }
+    textarea, button {
+      width: 100%;
+      font-size: 16px;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      background-color: #ff0055;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background-color: #ff2277;
+    }
+    .output {
+      background: #111;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      white-space: pre-wrap;
+      min-height: 60px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎙️ WizMode: Lyrical Alchemist</h1>
+  <p>What's on your heart?</p>
+  <textarea id="input" rows="4" placeholder="Type your feeling here..."></textarea>
+  <button onclick="generateLyrics()">✨ Generate Lyrics</button>
+
+  <div id="output" class="output"></div>
+
+  <script>
+    function generateLyrics() {
+      const input = document.getElementById('input').value.trim();
+      const outputDiv = document.getElementById('output');
+      
+      if (!input) {
+        outputDiv.innerText = "Please type something first.";
+        return;
+      }
+
+      // Example lyric options
+      const lines = [
+        "They didn’t see me breaking down, but heaven held the line.",
+        "Covered by grace while I walk through the fire.",
+        "My silence is a sword, but His Word is louder.",
+        "God caught every tear they missed in the crowd.",
+        "He fights for me when my faith is fading out.",
+        "Even in the dark, I'm never out of His reach."
+      ];
+
+      const random = lines[Math.floor(Math.random() * lines.length)];
+      outputDiv.innerText = `${input}\n\n🎵 Lyric:\n${random}`;
+    }
+  </script>
+</body>
+</html>
